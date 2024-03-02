@@ -5,17 +5,17 @@
 
 {% from "_macros.html" import render_field %}
 <div class="container">
-    <h4><a href="index">Nuevo</a></h4>
     <div class="row">
-        <form name="registro" action="/index" id="registro" method="post">
+        <form name="registro" action="/eliminar" id="eliminar" method="post">
+            
             <div class="row control-group">
                 <div class="form-group col-xs-12 float-label-form-group controls">
-                    {{render_field(form.nombre, class="form-control")}}
+                    {{render_field(form.id, class="form-control")}}
                 </div>
             </div>
             <div class="row control-group">
                 <div class="form-group col-xs-12 float-label-form-group controls">
-                    {{render_field(form.apaterno, class="form-control")}}
+                    {{render_field(form.nombre, class="form-control")}}
                 </div>
             </div>
             <div class="row control-group">
@@ -24,8 +24,16 @@
                 </div>
             </div>
             
+            <div class="row control-group">
+                <div class="form-group col-xs-12 float-label-form-group controls">
+                    {{render_field(form.apaterno, class="form-control")}}
+                </div>
+            </div>
+            
             <input type="hidden" name="csrf_token" value="{{csrf_token()}}"/>
-            <input type="submit" id="registrar" name="registrar" value="Registrar"/>
+            <input type="submit" id="eliminar" name="eliminar" class="btn btn-danger" value="Eliminar"/>
+            <a href="ABC_Completo" class="btn btn-success">Cancelar</a>
+
         </form>
     </div>
 </div>
